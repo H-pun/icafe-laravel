@@ -83,7 +83,7 @@ class BillingController extends Controller
             $json['body']['contents'][4]['contents'][4]['contents'][1]['text'] = "Rp" . number_format($billing->price, 2, ",", ".");
             $json['body']['contents'][4]['contents'][5]['contents'][1]['text'] = "Rp" . number_format($line_account->balance, 2, ",", ".");
             $bot->pushFlexMessage($line_account->userId, 'Receipt', $json);
-            // $bot->pushMessage($line_account->userId, "Pembelian paket " . $paket . " berasil!");
+            $bot->pushMessage($line_account->userId, "Pembelian paket " . $paket . " berasil!");
             // $bot->pushMultipleMessage(env('GROUP_ID'), new TextMessageBuilder(
             //     'Ada tugas baru nich 〜(꒪꒳꒪)〜',
             //     $title . ', dikumpulkan jam: ' . $deadline,

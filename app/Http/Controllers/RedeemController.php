@@ -13,10 +13,10 @@ use Illuminate\Support\Carbon;
 
 class RedeemController extends Controller
 {
-    public function verify(Request $request)
+    public function verify(LineBotApi $bot, Request $request)
     {
         try {
-            $code = Redeem::where('code',$request->get('code'))->first();
+            $code = Redeem::where('code', $request->get('code'))->first();
             if ($code->isUsed) {
                 throw new LineBotException('Code has been used!');
             }
@@ -28,13 +28,13 @@ class RedeemController extends Controller
             $code->isUsed = true;
             $line_account->save();
             $code->save();
-
+            $bot->pushMessage($line_account->userId, "Top Up " . "Rp" . number_format($code->amount, 2, ",", ".")  . " berasil!");
             return ApiResponse::build(200, 'Success', $code);
         } catch (\Exception $e) {
             return ApiResponse::build(500, 'Failed', $e->getMessage());
         }
     }
-    
+
     public function generate(Request $request)
     {
         try {
