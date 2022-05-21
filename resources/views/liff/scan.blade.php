@@ -44,7 +44,7 @@
             })
             .then(() => {
                 if (!liff.isInClient()) {
-                    // window.location.href = 'notline';
+                    window.location.href = 'notline';
                 } else {
                     liff.getProfile().then(function(profile) {
                         $("#add").click(function(e) {

@@ -88,7 +88,7 @@
             })
             .then(() => {
                 if (!liff.isInClient()) {
-                    // window.location.href = '403';
+                    window.location.href = '403';
                 } else {
                     liff.getProfile().then(function(profile) {
                         var formData = new FormData();
