@@ -15,7 +15,7 @@ class CreateBillingsTable extends Migration
     {
         Schema::create('billings', function (Blueprint $table) {
             $table->id();
-            $table->string('token')->nullable(false);
+            $table->string('token')->nullable(false)->unique();
             $table->string('userId')->nullable(false);
             $table->enum('type', ['plan', 'regular'])->nullable(false);
             $table->timestamp('timeStart')->useCurrent();

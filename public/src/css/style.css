@@ -1,36 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
-    background: #28314b !important;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #3F2B96, #A8C0FF);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
 }
 
-.logo {
-    text-align: center;
-    margin-bottom: 25px;
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-.btn-primary {
-    background: #384469 !important;
-    border: #384469 !important;
-}
-
-.btn-primary:hover {
-    background: #29314b !important;
-    border: #384469 !important;
-}
-
-.btn-primary:active {
-    background: #303a58 !important;
-    border: #384469 !important;
-}
-
-#particles {
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    z-index: 9999;
+    background: linear-gradient(-45deg, #3F2B96, #A8C0FF);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.preloader .loading {
     position: absolute;
-    z-index: -2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font: 14px arial;
+    color: #EEF3D2;
+}
+
+.container {
+    margin: auto 10% auto 10%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col {
+    flex-basis: 35%;
+}
+
+.card>h1 {
+    color: #7963a8;
+    margin: 10px 0px;
+}
+
+.card>p {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.card {
+    background-color: #EEF3D2;
+    padding: 25px 25px 25px 25px;
+    margin: 10px;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn {
+    text-decoration: none;
+    color: #6A67CE;
+    font-size: 10rem;
+    transition: 0.2s;
+}
+
+.input {
+    padding: 15px 20px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.input:focus {
+    border-radius: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #6A67CE;
+}
+
+.addButton {
+    font-size: 18px;
+    border-radius: 30px;
+    padding: 15px 20px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: #6A67CE;
+    margin: 10px;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #6A67CE;
+    transition: 0.3s;
+}
+
+.addButton:hover {
+    border-color: #5b58bb;
+    background-color: #5b58bb;
+}
+
+.btn:hover {
+    color: #9390eb;
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        margin: 5px;
+    }
+    .col {
+        flex-basis: 100%;
+    }
 }

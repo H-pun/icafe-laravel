@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Assignment extends Model
+class LineAccount extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    // public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -16,8 +16,9 @@ class Assignment extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
-        'deadline',
-        'detail'
+        'userId',
+        'displayName',
+        'pictureUrl',
+        'balance'
     ];
 }

@@ -17,6 +17,7 @@ class CreateLineAccountsTable extends Migration
             $table->id();
             $table->string('userId')->unique()->nullable(false);
             $table->string('displayName')->nullable(false);
+            $table->string('pictureUrl')->nullable();
             $table->integer('balance')->nullable();
             $table->timestamps();
         });
