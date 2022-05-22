@@ -17,6 +17,9 @@ class RedeemController extends Controller
     {
         try {
             $code = Redeem::where('code', $request->get('code'))->first();
+            if (!$code) {
+                throw new LineBotException('Invalid Code');
+            }
             if ($code->isUsed) {
                 throw new LineBotException('Code has been used!');
             }
